@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
- base:React_W5_FrontDeskInfo,
+ base:'/React_W6_React-Router/',
  plugins: [react()],
 })

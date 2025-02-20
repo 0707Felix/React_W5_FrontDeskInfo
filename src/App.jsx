@@ -62,7 +62,6 @@ function App() {
       alert('取得購物車列表失敗')
     }
 }
-
   //加入購物車
   const addCartItem = async(product_id,qty) =>{
       setIsLoading(true);
@@ -92,7 +91,7 @@ function App() {
         setIsScreenLoading(false);
       }
   }
-    //清空單一商品
+  //清空單一商品
     const removeCartItem = async(cartItem_id) =>{
       setIsScreenLoading(true);
       try {
@@ -104,7 +103,7 @@ function App() {
         setIsScreenLoading(false);
       }
   }
-      //更新購物車數量
+  //更新購物車數量
       const updateCartItem = async(cartItem_id,product_id,qty) =>{
         setIsScreenLoading(true);
         try {
@@ -122,7 +121,7 @@ function App() {
       setIsScreenLoading(false);
     }
   }
-    //結帳付款
+  //結帳付款
     const {
       register,
       handleSubmit,
@@ -130,7 +129,7 @@ function App() {
       reset
     } = useForm()
 
-    const onSubmit =  handleSubmit((data) => {
+  const onSubmit =  handleSubmit((data) => {
       console.log(data);
       const {message , ...user } = data;
       const userInfo = {
@@ -141,7 +140,7 @@ function App() {
       }
       checkOut(userInfo);
     })
-    //結帳購物車
+  //結帳購物車
     const checkOut = async (data) =>{
       setIsScreenLoading(true);
       try {
@@ -275,10 +274,10 @@ function App() {
 
         {cart.carts?.length > 0 && (      
           <div>
-          <div className="text-end py-3">
-            <button onClick={removeCart} className="btn btn-outline-danger" type="button">
-              清空購物車
-            </button>
+            <div className="text-end py-3">
+              <button onClick={removeCart} className="btn btn-outline-danger" type="button">
+                清空購物車
+              </button>
             </div>
 
             <table className="table align-middle">
@@ -343,7 +342,7 @@ function App() {
                 </tr>
               </tfoot>
             </table>
-        </div>)}
+          </div>)}
       </div>
 
       <div className="my-5 row justify-content-center">
@@ -365,10 +364,8 @@ function App() {
               className={`form-control ${errors.email && 'is-invalid'}`}
               placeholder="請輸入 Email"
             />
-
             {errors.email && <p className="text-danger my-2">{errors.email.message}</p>}
           </div>
-
           <div className="mb-3">
             <label htmlFor="name" className="form-label">
               收件人姓名
@@ -381,10 +378,8 @@ function App() {
               className={`form-control ${errors.name && 'is-invalid'}`}
               placeholder="請輸入姓名"
             />
-
             {errors.name && <p className="text-danger my-2">{errors.name.message}</p>}
           </div>
-
           <div className="mb-3">
             <label htmlFor="tel" className="form-label">
               收件人電話
@@ -402,10 +397,8 @@ function App() {
               className={`form-control ${errors.tel && 'is-invalid'}`}
               placeholder="請輸入電話"
             />
-
             {errors.tel && <p className="text-danger my-2">{errors.tel.message}</p>}
           </div>
-
           <div className="mb-3">
             <label htmlFor="address" className="form-label">
               收件人地址
@@ -419,7 +412,6 @@ function App() {
               className={`form-control ${errors.address && 'is-invalid'}`}
               placeholder="請輸入地址"
             />
-
               {errors.address && <p className="text-danger my-2">{errors.address.message}</p>}
           </div>
 
